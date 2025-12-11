@@ -1,4 +1,3 @@
-// components/BlogCards.jsx
 import React from "react";
 import Image from "next/image";
 
@@ -32,20 +31,9 @@ const BlogCards = () => {
 
       <div className="container px-5 py-24 mx-auto">
         <div className="flex flex-wrap -m-4">
-
-          {blogs.map((blog, index) => (
-            <div
-              key={blog.id}
-              className="
-                p-4 md:w-1/3 
-                opacity-0 
-                animate-cardAppear 
-                [animation-delay:calc(0.2s_*_var(--i))] 
-              "
-              style={{ "--i": `${index + 1}` }}   // FIXED ✔
-            >
-              <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                
+          {blogs.map((blog) => (
+            <div key={blog.id} className="p-4 md:w-1/3">
+              <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
                 <Image
                   src={blog.image}
                   alt={blog.title}
@@ -53,18 +41,15 @@ const BlogCards = () => {
                   height={400}
                   className="lg:h-48 md:h-36 w-full object-cover object-center"
                 />
-
                 <div className="p-6">
                   <h1 className="title-font text-lg font-bold text-gray-900 mb-3">
                     {blog.title}
                   </h1>
                   <p className="leading-relaxed">{blog.description}</p>
                 </div>
-
               </div>
             </div>
           ))}
-
         </div>
       </div>
     </section>
