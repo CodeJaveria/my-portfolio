@@ -1,4 +1,3 @@
-// components/SkillsCards.jsx
 import React from "react";
 import Image from "next/image";
 
@@ -34,20 +33,13 @@ const SkillsCards = () => {
 
       <div className="container px-5 py-24 mx-auto">
         <div className="flex flex-wrap -m-4">
-
           {skills.map((skill, index) => (
             <div
               key={skill.id}
-              className="
-                p-4 md:w-1/3 
-                opacity-0 
-                animate-cardAppear 
-                [animation-delay:calc(0.2s_*_var(--i))]
-              "
-              style={{ "--i": `${index + 1}` }}  // animation delay fixed
+              className="p-4 md:w-1/3 opacity-0 animate-cardAppear"
+              style={{ animationDelay: `${index * 0.2}s` }} // ✅ TypeScript safe
             >
-              <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-
+              <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden hover:shadow-xl">
                 <div className="relative w-full h-48">
                   <Image
                     src={skill.image}
@@ -66,11 +58,9 @@ const SkillsCards = () => {
                   </p>
                   <p className="font-medium">{skill.description}</p>
                 </div>
-
               </div>
             </div>
           ))}
-
         </div>
       </div>
     </section>
