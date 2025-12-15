@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function HeroSection() {
   return (
-    <section className="text-gray-600 body-font">
+     <section className="body-font">
       <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center md:gap-4 gap-4">
         
         <div
@@ -30,7 +30,7 @@ export default function HeroSection() {
           animate-[fadeInRight_0.9s_ease-out_forwards]"
         >
           
-          <h1 className="title-font sm:text-4xl text-3xl mb-4 font-bold text-black tracking-wide">
+          <h1 className="title-font sm:text-4xl text-3xl mb-4 font-bold tracking-wide">
             Full Stack Website Developer
           </h1>
 
